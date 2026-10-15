@@ -1,0 +1,27 @@
+hdfs_base: hdfs://namenode:9000          # direccion de HDFS (Tema 5)
+
+spark:
+  master: spark://spark-master:7077      # el spark-master del docker-compose (en clase: local[*])
+  driver_host: jupyter                   # nombre del contenedor de Jupyter
+  executor_memory: 2g
+  dfs_replication: 2                     # 2 copias por bloque
+
+input:
+  local_csv: /home/jovyan/work/data/wikirank_20240801.csv   # el CSV visto desde Jupyter
+
+paths:                                   # rutas DENTRO de HDFS
+  raw: /raw/wikirank
+  curated: /curated/articles
+  language_info: /curated/language_info
+  results: /results
+
+partition_column: Language
+
+quality:
+  score_min: 0
+  score_max: 100
+
+ml:
+  sample_fraction: 0.05                  # 5% de los articulos para el modelo
+  train_ratio: 0.8
+  seed: 42
