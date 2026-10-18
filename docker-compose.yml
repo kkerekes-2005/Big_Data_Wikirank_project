@@ -76,7 +76,7 @@ services:
       - ./hadoop.env
 
   spark-master:
-    image: quay.io/jupyter/pyspark-notebook:latest
+    image: quay.io/jupyter/pyspark-notebook:spark-4.2.0
     container_name: spark-master
     hostname: spark-master
     user: root
