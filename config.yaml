@@ -8,6 +8,7 @@ spark:
 
 input:
   local_csv: /home/jovyan/work/data/wikirank_20240801.csv
+  expected_bytes: 8195179141
 
 paths:
   raw: /raw/wikirank
