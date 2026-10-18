@@ -86,7 +86,7 @@ services:
       - 7077:7077
 
   spark-worker:
-    image: quay.io/jupyter/pyspark-notebook:latest
+    image: quay.io/jupyter/pyspark-notebook:spark-4.2.0
     container_name: spark-worker
     hostname: spark-worker
     user: root
@@ -101,7 +101,7 @@ services:
       - spark-master
 
   jupyter:
-    image: quay.io/jupyter/pyspark-notebook:latest
+    image: quay.io/jupyter/pyspark-notebook:spark-4.2.0
     container_name: jupyter
     hostname: jupyter
     user: root
