@@ -22,7 +22,7 @@ Los componentes principales son:
 Para ejecutar el proyecto se necesita:  
 &emsp;· Docker Desktop instalado.  
 &emsp;· Alrededor de 8 GB de memoria RAM disponibles para Docker.  
-&emsp;· Aproximadamente 25 GB de espacio libre en disco.  
+&emsp;· Aproximadamente 35 GB de espacio libre en disco.  
 &emsp;· El dataset **wikirank_20240801.csv**.
 
 ### Dataset
@@ -88,8 +88,10 @@ comparaciones de rendimiento con RDDs, CSV frente a Parquet, optimización media
 Requiere Python 3 en el NodeManager (apartado 4) y el CSV ya cargado en `/raw/wikirank` por el pipeline.
 
 ```bash
-COMANDO HADOOP JAR DE LAURA
+docker exec -it namenode hdfs dfs -rm -r -f /results/mr_stats_by_language
+docker exec -it namenode bash -c "time hadoop jar /opt/hadoop-3.2.1/share/hadoop/tools/lib/hadoop-streaming-3.2.1.jar -files /mapreduce/mapper.py,/mapreduce/reducer.py -mapper 'python3 mapper.py' -reducer 'python3 reducer.py' -input /raw/wikirank -output /results/mr_stats_by_language"
 ```
+La primera línea borra la salida anterior (Hadoop no escribe en una carpeta que ya existe), así que el job es repetible. El resultado queda en `/results/mr_stats_by_language`; `experiments.ipynb` lo compara con P1.
 
 ## 6. Organización de los datos en HDFS
 Los datos se organizan en cuatro zonas:  
@@ -112,6 +114,6 @@ Esta organización permite conservar los datos originales y trabajar con version
 ## 8. Reproducibilidad
 El proyecto está diseñado para poder ejecutarse de nuevo sin duplicar los datos ni alterar los resultados existentes.
 
-Se utiliza el modo **overwrite** para las escrituras y se comprueba si el CSV ya existe en HDFS antes de realizar una nueva ingesta.
+Se utiliza el modo **overwrite** para las escrituras y se comprueba si el CSV ya está en HDFS con el tamaño esperado antes de realizar una nueva ingesta.
 
 Los parámetros principales se encuentran en **config.yaml**, por lo que pueden modificarse sin cambiar directamente el código del pipeline.
