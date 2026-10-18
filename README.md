@@ -29,7 +29,7 @@ Para ejecutar el proyecto se necesita:
 
 WikiRank (Lewoniewski, 2024): https://huggingface.co/datasets/lewoniewski/wikipedia_quality_wikirank
 
-Descargar el fichero `wikirank_20240801.csv` (8,2 GB) y copiarlo en la carpeta `data/` del repositorio.
+Descargar el fichero `wikirank_20240801.csv` (8,2 GB) y crear la carpeta `data/` en la raíz del proyecto y copiar ahí el CSV.
 El CSV no se incluye en el repositorio de GitHub debido a su tamaño (supera el límite 100MB).
 
 ## 4. Instalación y configuración
