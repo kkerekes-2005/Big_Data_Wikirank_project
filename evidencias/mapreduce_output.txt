@@ -1,4 +1,6 @@
-﻿ar	1237943	17.109
+# Hadoop Streaming en YARN (PC del aula), salida de "time": real 3m38.951s (219 s)
+# lengua    artículos    media
+ar	1237943	17.109
 az	201054	15.343
 be	244985	12.946
 bg	299787	17.745
