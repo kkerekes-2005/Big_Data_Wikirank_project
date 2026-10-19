@@ -1,0 +1,2 @@
+﻿7.6 G  15.3 G  /raw/wikirank
+1.1 G  2.3 G   /curated/articles
