@@ -1,0 +1,17 @@
+﻿Found 1 items
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:27 /raw/wikirank
+Found 3 items
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:55 /curated/articles
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:55 /curated/language_info
+drwxr-xr-x   - root supergroup          0 2026-10-19 17:02 /curated/title_words
+Found 8 items
+drwxr-xr-x   - root supergroup          0 2026-10-19 17:03 /results/ml_coefficients
+drwxr-xr-x   - root supergroup          0 2026-10-19 17:03 /results/ml_metrics
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:55 /results/q1_stats_by_language
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:56 /results/q2_top10_by_language
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:58 /results/q3_by_language_traits
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:56 /results/q3_speakers
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:56 /results/q3_speakers_by_language
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:55 /results/quality_report
+Found 1 items
+drwxr-xr-x   - root supergroup          0 2026-10-19 16:53 /quarantine/articles
