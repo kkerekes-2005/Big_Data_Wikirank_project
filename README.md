@@ -88,7 +88,7 @@ powershell -ExecutionPolicy Bypass -File run_all.ps1
 bash run_all.sh
 ```
 
-El script levanta el entorno, espera a que HDFS salga del modo seguro, instala Python 3 en el NodeManager si falta y ejecuta en orden: pipeline (ingesta → HDFS → Spark → resultados → modelo), job de MapReduce y experimentos. Se detiene si algún paso falla. Los notebooks ejecutados se guardan en `salidas/`. Duración total ≈ 35 min en un PC del aula (evidencias/run_all.png).
+El script levanta el entorno, espera a que HDFS salga del modo seguro, instala Python 3 en el NodeManager si falta y ejecuta en orden: pipeline (ingesta → HDFS → Spark → resultados → modelo), job de MapReduce y experimentos. Se detiene si algún paso falla. Los notebooks ejecutados se guardan en `salidas/`. Duración total ≈ 30 min en un PC del aula.
 
 ### Paso a paso (alternativa)
 
@@ -109,6 +109,7 @@ El pipeline incluye:
 ```bash
 docker exec jupyter bash -c 'export SPARK_HOME=${SPARK_HOME:-/usr/local/spark}; export PYTHONPATH=$SPARK_HOME/python:$(ls $SPARK_HOME/python/lib/py4j-*-src.zip):$PYTHONPATH; jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 /home/jovyan/work/notebooks/pipeline.ipynb'
 ```
+(`docker exec` no carga el entorno de Spark de la imagen; por eso se define `PYTHONPATH` antes de `nbconvert`.)
 
 Después del pipeline se ejecuta **notebooks/experiments.ipynb** de la misma forma (lee la zona curada):
 comparaciones de rendimiento con RDDs, CSV frente a Parquet, optimización mediante broadcast join y análisis de data skew.
