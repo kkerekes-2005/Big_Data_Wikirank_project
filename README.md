@@ -30,7 +30,7 @@ Los componentes principales son:
 ## 3. Requisitos
 Para ejecutar el proyecto se necesita:  
 &emsp;· Docker Desktop instalado.  
-&emsp;· Alrededor de 8 GB de memoria RAM disponibles para Docker.  
+&emsp;· Alrededor de 8 GB de memoria RAM disponibles para Docker: se recomienda un equipo de 16 GB. En uno de 8 GB funciona, pero hay que iniciar Docker en limpio (`wsl --shutdown` y volver a abrir Docker Desktop) y cerrar otras aplicaciones; si no, Spark puede perder executors (`exit code 137`).
 &emsp;· Aproximadamente 35 GB de espacio libre en disco.  
 &emsp;· El dataset **wikirank_20240801.csv**.
 
